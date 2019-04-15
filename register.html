@@ -1,0 +1,28 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+            <title>Register</title>
+            <script src='script/angular.min.js'></script>
+            <script src='script/tweetController.js'></script>
+            <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-app="tweetModule">
+        <div class="row" ng-controller="authController">
+            <div class="col-3">
+            </div>
+
+            <div class="col-6">
+            <br/><br/><br/><br/><br/><br/>
+                <form ng-submit="register()">
+                        <input type="text" class="form-control" placeholder="User Name..." ng-model="user.user_name"/>
+                        <input type="text" class="form-control" placeholder="Password..." ng-model="user.password"/>
+                        <input class="btn submit-btn pull-right" type="submit" value="Register"/>
+                </form>
+                                        
+            </div>
+            <div class="col-3">
+            </div>
+        </div>
+        
+    </body>
+</html>

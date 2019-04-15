@@ -1,0 +1,16 @@
+.post
+{
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.odd
+{
+    background-color: brown;
+}
+
+.even
+{
+    background-color: burlywood;
+}
