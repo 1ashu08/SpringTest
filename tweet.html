@@ -1,0 +1,30 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+            <title>First Trial</title>
+            <script src='script/angular.min.js'></script>
+            <script src='script/tweetController.js'></script>
+            <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-app="tweetModule">
+        <div class="row" ng-controller="tweetController">
+            <div class="col-3">
+            </div>
+            <div class="col-6">
+                <form ng-submit="postComment()">
+                        <input type="text" class="form-control" placeholder="Name..." name="chatBox" width="100%" id="chatBox" ng-model="newPosts.created_by"/>
+                        <textarea rows="3" class="form-control" placeholder="Say Something..." ng-model="newPosts.text"></textarea>                    
+                        <input class="btn submit-btn pull-right" type="submit" value="Post"/>
+                </form>
+                    
+                <div class="post" ng-repeat="post in posts| orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <p>{{post.text }} <sub>posted by {{post.created_by}} at {{post.created_at | date:"h:mma 'on' MMM d, y"}}</sub></p>
+                </div>
+                    
+            </div>
+            <div class="col-3">
+            </div>
+        </div>
+        
+    </body>
+</html>
