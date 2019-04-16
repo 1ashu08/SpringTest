@@ -1,0 +1,32 @@
+<html>
+<head>
+	
+</head>
+<body>
+<div >
+     <label id="data"></label>
+     <input type="text" id="data"/>
+</div>
+<form id="contactForm" onsubmit="Test()">
+
+	<input type="text" id="mail" name="mail"/>
+	<input type="text" id="body" name="body"/>
+	<input type="submit" value="SUBMIT"/>
+
+</form>
+<script>
+	var data;//=0;
+	updateData();
+	function updateData()
+	{
+		if(!data)
+			data=0;		
+		data=data+1;
+		document.getElementById('data').innerHTML =data.toString();			
+		//document.getElementById('data').value=data.toString();		
+		setTimeout(updateData, 1000);
+	}	
+			
+</script>
+</body>
+</html>

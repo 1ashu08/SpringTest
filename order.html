@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script src='angular.min.js'></script>
+    <script src="orderController.js"></script>
+</head>
+<body ng-app="angularApp">
+    <div class="container" ng-controller="orderController">
+        <div class="row" style="height:10vh">
+            <div class="col-lg-12"></div>
+        </div>
+        <div class="row" style="height:90vh">
+                <!--<form ng-submit="placeOrder()">-->
+                    <input type="text" class="form-control m-5 p-2" placeholder="Product Name.." name="productName" id="productName" ng-model="newData.name"/>
+                    <input type="text" class="form-control m-5 p-2" placeholder="Quantity..." name="quantity" id="quantity" ng-model="newData.quantity"/>
+                    <input type="text" class="form-control m-5 p-2" placeholder="Category.." name="category" id="category" ng-model="newData.category"/>
+		    <input type="text" class="form-control m-5 p-2" placeholder="Price.." name="price" id="price" ng-model="newData.price"/>		    <input type="text" class="form-control m-5 p-2" placeholder="Size.." name="size" id="size" ng-model="newData.size"/>
+		    <input type="text" class="form-control m-5 p-2" placeholder="subTotal" name="subTotal" id="subTotal" ng-model="newData.subTotal"/>
+		     <button ng-click="addOrder()">Add Data</button> 			
+ 	             <button ng-click="placeOrder()">Submit Data</button>
+		     
+			<table class="table bg-warning">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        
+                                        <th>Quantity</th>
+                                        
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="data in Data">
+                                        <th>{{data.name}}</th>
+                                        <th>{{data.quantity}}</th>
+                                        <th>{{data.category}}</th>
+                                        <th><button ng-click="deleteOrder($index)" class="btn btn-primary">DELETE</button></th>
+					<th><button ng-click="reduceQuantity($index)" class="btn btn-primary">Reduce Quantity</button></th>
+                                    </tr>
+                                </tbody>
+                        </table>    
+            
+        </div>
+			    
+   </div> 
+</body>
+</html>
+
