@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "model.Message" table = "MESSAGE">
+      
+      <meta attribute = "class-description">
+         This class contains the person detail. 
+      </meta>
+      
+      <id name = "id" type = "int" column = "id">
+         
+      </id>
+      
+      <property name = "personId" column = "PersonID" type = "int"/>
+      <property name = "date" column = "dateStamp" type = "java.time.LocalDate"/>
+      <property name = "time" column = "timeStamp" type = "java.time.LocalDateTime"/>      
+      <property name = "data" column = "Data" type = "string"/>      
+            
+   </class>
+</hibernate-mapping>
