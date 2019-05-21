@@ -1,0 +1,79 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Test3 {
+    public static void main(String[] args) {
+    	String driverPath="D:\\Users\\850036509\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe";
+    	System.setProperty("webdriver.chrome.driver",driverPath);
+    	WebDriver driver = new ChromeDriver();
+        String baseUrl = "https://www.gmail.com";
+        String tagName = "";
+        
+        driver.get(baseUrl);
+        
+        
+        driver.findElement(By.className("whsOnd")).sendKeys("yourmail.com");
+        driver.findElement(By.className("CwaK9")).click();
+
+        //vgHGpc RRP0oc
+        
+        WebDriverWait wait=new WebDriverWait(driver,20);
+
+        //profileIdentifier
+        WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("aCayab")));
+        
+        boolean visible=element.isDisplayed();
+        if(visible)
+        {
+        	//driver.findElement(By.xpath("//input[@class='whsOnd' and contains(@class,'inputtext')]")).sendKeys("Ashutosh08@");
+
+        	driver.findElement(By.name("password")).sendKeys("yourpassword");
+
+            driver.findElement(By.className("CwaK9")).click();
+        
+            WebDriverWait wait2=new WebDriverWait(driver,25);
+
+            
+            element=wait2.until(ExpectedConditions.visibilityOfElementLocated(By.className("z0")));
+            visible=false;
+            visible=element.isDisplayed();
+            if(visible)
+            {
+            	driver.findElement(By.className("z0")).click();
+            }
+            
+            WebDriverWait wait1=new WebDriverWait(driver,25);
+
+            element=wait1.until(ExpectedConditions.visibilityOfElementLocated(By.name("to")));
+            visible=false;
+            visible=element.isDisplayed();
+            if(visible)
+            {
+            	
+            	
+            	driver.findElement(By.name("to")).sendKeys("sunnykumar3306@gmail.com");
+            	driver.findElement(By.name("subjectbox")).sendKeys("Testing Mail");
+            
+            	driver.findElement(By.id(":s1")).sendKeys("Data being sent testing the mail sending module");
+            
+            	driver.findElement(By.className("dC")).click();
+            	
+            }
+        }
+        else
+        {
+        	System.out.println("Not visible");
+        }
+        
+        System.out.println(tagName);
+        //driver.close();
+        //System.exit(0);
+}
+}
