@@ -1,0 +1,26 @@
+@SpringBootApplication
+
+1.setup default configuration
+2.Starts Spring application context like it starts all
+the services controller that is defined by your code in a container(context).
+3.Performs classpath scan(check all the anotation like
+if its is a controller classs treat it as controller or else if it is a 
+service class treat it as service etc.)
+4.Strats tomcat server
+
+
+App contains two important thing 
+Spring MVC framework for web and controller
+So once there is a request with a particualr URI then 
+Spring MVC checks through the controller and tries to find out the 
+Mehtod which matches the request method and URI.
+
+It also converts data into JSON for the response.
+
+@GeneratedValue to automatically generate ID number in Database
+
+spring boot common application properties
+
+To create the jar for the project we use
+mvn clean install
+
