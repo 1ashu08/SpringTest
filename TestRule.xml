@@ -90,3 +90,23 @@ import java.util.*;
   getName();
   </Source>
 </Rule>
+
+<!--
+public String getIdentityProperty(String identity, String property) {
+          QueryOptions ops = new QueryOptions();
+          Filter nameFilter = Filter.eq("name", identity);
+          ops.add(new Filter[]{nameFilter});
+
+          String val = null; 
+          Iterator it = context.search(Identity.class, ops, property);
+          while ( it.hasNext() ) {
+              Object[] row = (Object[])it.next();
+              val = (String)row[0];
+              if ( it.hasNext() ) {
+                  // shouldn't happen but guard
+                  throw new GeneralException("More then one ["+property+"] value returned for ["+identity+"]");
+              }
+          } 
+          return val;
+      }
+-->
