@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application connector="sailpoint.connector.LDAPConnector"  featuresString="AUTHENTICATE, PROVISIONING, GROUP_PROVISIONING, PASSWORD, MANAGER_LOOKUP, SEARCH, ACCOUNT_ONLY_REQUEST" icon="directory2Icon"   name="LDAP" profileClass="" type="OpenLDAP - Direct">
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig"  name="LDAP Correlation"/>
+  </AccountCorrelationConfig>
+  <Attributes>
+    <Map>
+      <entry key="SecureApprover" value="Donna.Scott"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1407878022459</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1407877953834</Date>
+        </value>
+      </entry>
+      <entry key="authSearchAttributes">
+        <value>
+          <List>
+            <String>cn</String>
+            <String>uid</String>
+            <String>mail</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="authorizationType" value="simple"/>
+      <entry key="compositeDefinition"/>
+      <entry key="enableNetGroups">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="enablePosixGroups">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="group.filterString"/>
+      <entry key="group.iterateSearchFilter"/>
+      <entry key="group.searchDN" value="ou=Groups,dc=training,dc=sailpoint,dc=com"/>
+      <entry key="group.searchScope" value="SUBTREE"/>
+      <entry key="groupEntitlementAttr" value="groups"/>
+      <entry key="groupMemberAttribute" value="uniqueMember"/>
+      <entry key="groupMemberSearchDN" value="ou=Groups,dc=training,dc=sailpoint,dc=com"/>
+      <entry key="host" value="training.sailpoint.com"/>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations">
+        <value>
+          <List>
+            <String>Create</String>
+            <String>Modify</String>
+            <String>Delete</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="nisNetGroupTriple_Member_Attribute"/>
+      <entry key="pageSize" value="100"/>
+      <entry key="password" value="1:+rujZPK3O32hnyr7pR9vFw=="/>
+      <entry key="passwordAttr" value="userPassword"/>
+      <entry key="port" value="1636"/>
+      <entry key="posixGroup_Member_Attribute"/>
+      <entry key="searchDN" value="ou=People,dc=training,dc=sailpoint,dc=com"/>
+      <entry key="searchScope" value="SUBTREE"/>
+      <entry key="secure_application">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US" value="OpenDS LDAP&lt;br>&#xA;&#xA;"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="LDAP Template"/>
+      <entry key="useSSL">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="user" value="cn=Directory Manager"/>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity"  name="spadmin"/>
+  </Owner>
+  <PasswordPolicies>
+    <PasswordPolicyHolder   >
+      <PolicyRef>
+        <Reference class="sailpoint.object.PasswordPolicy"  name="LDAP Default Password Policy"/>
+      </PolicyRef>
+    </PasswordPolicyHolder>
+  </PasswordPolicies>
+  <Schemas>
+    <Schema  displayAttribute="cn" groupAttribute="groups"  identityAttribute="dn" instanceAttribute=""  nativeObjectType="inetOrgPerson" objectType="account">
+      <AttributeDefinition name="businessCategory" remediationModificationType="None" type="string">
+        <Description>business category</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="carLicense" remediationModificationType="None" type="string">
+        <Description>vehicle license or registration plate</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="cn" remediationModificationType="None" type="string">
+        <Description>common name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="departmentNumber" remediationModificationType="None" type="string">
+        <Description>identifies a department within an organization</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" remediationModificationType="None" type="string">
+        <Description>descriptive information</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="destinationIndicator" remediationModificationType="None" type="string">
+        <Description>destination indicator</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="displayName" remediationModificationType="None" type="string">
+        <Description>preferred name to be used when displaying entries</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="dn" remediationModificationType="None" type="string">
+        <Description>distinguished name for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="employeeNumber" remediationModificationType="None" type="string">
+        <Description>numerically identifies an employee within an organization</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="employeeType" remediationModificationType="None" type="string">
+        <Description>type of employment for a person</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="facsimileTelephoneNumber" remediationModificationType="None" type="string">
+        <Description>Facsimile (Fax) Telephone Number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="givenName" remediationModificationType="None" type="string">
+        <Description>first name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="groups" remediationModificationType="None" type="string">
+        <Description>List of groups a user is a member</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="homePhone" remediationModificationType="None" type="string">
+        <Description>home telephone number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="homePostalAddress" remediationModificationType="None" type="string">
+        <Description>home postal address</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="initials" remediationModificationType="None" type="string">
+        <Description>initials of some or all of names, but not the surname(s).</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="internationaliSDNNumber" remediationModificationType="None" type="string">
+        <Description>international ISDN number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="l" remediationModificationType="None" type="string">
+        <Description>city</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="mail" remediationModificationType="None" type="string">
+        <Description>RFC822 Mailbox</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="manager" remediationModificationType="None" type="string">
+        <Description>DN of manager</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="mobile" remediationModificationType="None" type="string">
+        <Description>mobile telephone number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="o" remediationModificationType="None" type="string">
+        <Description>organization this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="objectClass" remediationModificationType="None" type="string">
+        <Description>object classes of the entity</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="ou" remediationModificationType="None" type="string">
+        <Description>organizational unit this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="pager" remediationModificationType="None" type="string">
+        <Description>pager telephone number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="physicalDeliveryOfficeName" remediationModificationType="None" type="string">
+        <Description>Physical Delivery Office Name</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="postOfficeBox" remediationModificationType="None" type="string">
+        <Description>Post Office Box</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="postalAddress" remediationModificationType="None" type="string">
+        <Description>postal address</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="postalCode" remediationModificationType="None" type="string">
+        <Description>postal code</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="preferredDeliveryMethod" remediationModificationType="None" type="string">
+        <Description>preferred delivery method</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="preferredLanguage" remediationModificationType="None" type="string">
+        <Description>preferred written or spoken language for a person</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="registeredAddress" remediationModificationType="None" type="string">
+        <Description>registered postal address</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="roomNumber" remediationModificationType="None" type="string">
+        <Description>room number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="secretary" remediationModificationType="None" type="string">
+        <Description>DN of secretary</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="seeAlso" remediationModificationType="None" type="string">
+        <Description>DN of related object</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="sn" remediationModificationType="None" type="string">
+        <Description>last (family) name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="st" remediationModificationType="None" type="string">
+        <Description>state or province which this object resides in</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="street" remediationModificationType="None" type="string">
+        <Description>street address of this object</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="telephoneNumber" remediationModificationType="None" type="string">
+        <Description>Telephone Number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="teletexTerminalIdentifier" remediationModificationType="None" type="string">
+        <Description>Teletex Terminal Identifier</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="telexNumber" remediationModificationType="None" type="string">
+        <Description>Telex Number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="title" remediationModificationType="None" type="string">
+        <Description>title associated with the entity</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="uid" remediationModificationType="None" type="string">
+        <Description>user identifier</Description>
+      </AttributeDefinition>
+    </Schema>
+    <Schema  displayAttribute="cn"  identityAttribute="dn" instanceAttribute=""  nativeObjectType="groupOfUniqueNames" objectType="group">
+      <AttributeDefinition name="cn" remediationModificationType="None" type="string">
+        <Description>common name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="uniqueMember" remediationModificationType="None" type="string">
+        <Description>unique member of a group</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="dn" remediationModificationType="None" type="string">
+        <Description>Directory Path</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="o" remediationModificationType="None" type="string">
+        <Description>organization this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="ou" remediationModificationType="None" type="string">
+        <Description>organizational unit this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="owner" remediationModificationType="None" type="string">
+        <Description>owner (of the object)</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" remediationModificationType="None" type="string">
+        <Description>descriptive information</Description>
+      </AttributeDefinition>
+    </Schema>
+  </Schemas>
+  <Templates>
+    <Template name="account" usage="Create">
+      <Field displayName="User DN" helpKey="Enter user distinguished name. For instance, &apos;uid=user1,cn=users,dc=sailpoint,dc=com&apos; for inetorgperson type of user." name="dn" required="true" type="string">
+        <Script>
+          <Source>return "cn=" + identity.getName() + ",ou=people,dc=training,dc=sailpoint,dc=com";</Source>
+        </Script>
+      </Field>
+      <Field displayName="Password" helpKey="Enter user password" name="userPassword" required="true" type="secret" value="password"/>
+      <Field displayName="CN" helpKey="Enter user CN. For instance, &apos;user1&apos;" name="cn" required="true" type="string">
+        <Script>
+          <Source>return identity.getName();</Source>
+        </Script>
+      </Field>
+      <Field displayName="SN" helpKey="Enter user last name" name="sn" required="true" type="string">
+        <Script>
+          <Source>return identity.getLastname();</Source>
+        </Script>
+      </Field>
+      <Field displayName="User Type" helpKey="Specify the object class to create user" name="ObjectClass" required="true" type="string" value="inetOrgPerson">
+        <AllowedValuesDefinition>
+          <Value>
+            <List>
+              <String>InetOrgPerson</String>
+            </List>
+          </Value>
+        </AllowedValuesDefinition>
+      </Field>
+    </Template>
+    <Template name="group create" usage="CreateGroup">
+      <Field displayName="DN" name="dn" required="true" reviewRequired="true" type="string"/>
+      <Field displayName="Description" name="description" reviewRequired="true" type="string"/>
+      <Field displayName="CN" name="cn" required="true" reviewRequired="true" type="string"/>
+    </Template>
+    <Template name="edit group" usage="UpdateGroup">
+      <Field displayName="Description" name="description" reviewRequired="true" type="string"/>
+    </Template>
+  </Templates>
+</Application>
