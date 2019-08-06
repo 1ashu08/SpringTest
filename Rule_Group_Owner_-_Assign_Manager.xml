@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule   language="beanshell" name="Group Owner - Assign Manager" type="GroupOwner">
+  <Description>A rule used to assign owners to groups generated from a group factory.</Description>
+  <Signature returnType="Object"/>
+  <Source>
+
+//System.out.println("GroupDefinition = " + group.toXml()); 
+//System.out.println("GroupFactory = " + factory.toXml()); 
+//System.out.println(group.getName()); 
+
+return group.getName();</Source>
+</Rule>
