@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule created="1547282441479" id="ff8081816840bd7301684138650700e1" language="beanshell" modified="1547283974940" name="Remove_Uncorrelate_Identity" type="Correlation">
+  <Description>Identity Correlation Rules are used to find identities to which new accounts can be attached.
+
+A correlation rule must return a Map with one of the specified Return arguments.</Description>
+  <Signature returnType="Map"/>
+  <Source>
+  import sailpoint.object.Identity;
+import sailpoint.api.SailPointContext;  
+import java.util.*;
+  
+    List obj=context.getObjects(Identity.class);
+  
+  	int i=0;
+  	int correctCount=0,incorrectCount=0;
+  	//System.out.println(obj.size());
+  	for(Identity idn:obj)
+    {
+      //System.out.println("Name is "+idn.getFirstname());
+			//System.out.println("SSO is "+idn.getName());
+      String name=idn.getName();
+      String str=idn.getFirstname());
+      if(name!=null and str==null)
+         {
+		System.out.println("Name is "+str+" sso is "+name);
+                  //context.removeObject(idn);
+                  //break;
+          }  
+    	
+    }
+  	//context.commitTransaction();
+  	//System.out.println("New Count"+countData());
+
+</Source>
+</Rule>
+
